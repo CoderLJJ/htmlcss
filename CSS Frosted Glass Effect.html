@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Frosted Glass Effect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        section{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        section h2{
+            font-size: 5em;
+            color: #fff;
+            pointer-events: none;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        section .glass{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
+            width: 300px;
+            height: 200px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            background: transparent;
+            backdrop-filter: blur(10px);
+            transition: 0.2s;
+        }
+         video {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            /*加滤镜*/
+            /*filter: blur(15px); //背景模糊设置 */
+            /*-webkit-filter: grayscale(100%);*/
+            /*filter:grayscale(100%); //背景灰度设置*/
+            z-index: -11
+        }
+
+        source {
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<video id="v1" autoplay loop muted>
+    <source src="lin.mp4"/>
+</video>
+<section>
+    <h2>Frosted Glass</h2>
+    <div class="glass"></div>
+</section>
+<script>
+    document.addEventListener("mousemove",function (e) {
+        const glass =document.querySelector('.glass');
+        glass.style.left=e.offsetX +'px';
+        glass.style.top=e.offsetY+'px';
+    })
+</script>
+</body>
+</html>

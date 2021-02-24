@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transparent Background</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .bg-wrap{
+            /*background: url(bg.png);*/
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        .bg-wrap .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 550px;
+            transform: translate(-50%,-50%);
+            background: rgba(255,255,255,.5);
+            padding: 15px;
+            box-shadow: 0 0 10px 1px rgba(255,255,255,0.5),inset 0 0 4px 4px rgba(255,255,255,0.2);
+        }
+        .bg-wrap .box h1{
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 36px;
+            padding: 15px 0;
+            text-transform: uppercase;
+        }
+        .bg-wrap .box p{
+            font-size: 16px;
+            line-height: 24px;
+            text-align: justify;
+
+        }
+                video {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            /*加滤镜*/
+            /*filter: blur(15px); //背景模糊设置 */
+            /*-webkit-filter: grayscale(100%);*/
+            /*filter:grayscale(100%); //背景灰度设置*/
+            z-index: -11
+        }
+
+        source {
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<video id="v1" autoplay loop muted>
+    <source src="lin.mp4"/>
+</video>
+<div class="bg-wrap">
+    <div class="box">
+        <h1>Transparent Background</h1>
+        <p>Looossassssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+    </div>
+</div>
+</body>
+</html>
